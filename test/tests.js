@@ -7,7 +7,8 @@ import {
     myFunction,
     returnAsAnArray,
     returnAsAString,
-    makeLuckyGreeting
+    makeLuckyGreeting,
+    getSecondItem,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -118,7 +119,7 @@ test('this test should take in three numbers and return those number mushed toge
     expect.equal(actual3, expected3);
 });
 
-test('This function should take in two numbers and return a greeting announcing that the sum of those numbers is today\'s lucky number', (expect) => {
+test("This function should take in two numbers and return a greeting announcing that the sum of those numbers is today's lucky number", (expect) => {
     const expected = `Hello! Your lucky number for the day is 222.`;
     const actual = makeLuckyGreeting(111, 111);
     expect.equal(actual, expected);
@@ -130,4 +131,18 @@ test('This function should take in two numbers and return a greeting announcing 
     const expected3 = `Hello! Your lucky number for the day is 666.`;
     const actual3 = makeLuckyGreeting(521, 145);
     expect.equal(actual3, expected3);
+});
+
+test('this function should take an array and return the second item in the array', (expect) => {
+    const expected = 'plum';
+    const actual = getSecondItem(['apple', 'plum', 'kiwi']);
+    expect.deepEqual(actual, expected);
+
+    const expected2 = 'charmander';
+    const actual2 = getSecondItem(['bulbasaur', 'charmander', 'squirtle']);
+    expect.deepEqual(actual2, expected2);
+
+    const expected3 = 'sushi';
+    const actual3 = getSecondItem(['pizza', 'sushi', 'burger']);
+    expect.deepEqual(actual3, expected3);
 });

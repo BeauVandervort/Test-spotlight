@@ -112,7 +112,7 @@ Output:
 */
 
 export function makeLuckyGreeting(firstNumber, secondNumber) {
-    let luckyNum = (firstNumber + secondNumber);
+    let luckyNum = firstNumber + secondNumber;
     return `Hello! Your lucky number for the day is ${luckyNum}.`;
 }
 
@@ -130,7 +130,7 @@ Output:
 */
 
 export function getSecondItem(array) {
-    return true;
+    return array[1];
 }
 
 // This function should take an array and return the LAST item in the array, no matter the array's length
