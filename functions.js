@@ -112,7 +112,8 @@ Output:
 */
 
 export function makeLuckyGreeting(firstNumber, secondNumber) {
-    return true;
+    let luckyNum = (firstNumber + secondNumber);
+    return `Hello! Your lucky number for the day is ${luckyNum}.`;
 }
 
 // This function should take an array and return the second item in the array

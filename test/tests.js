@@ -7,6 +7,7 @@ import {
     myFunction,
     returnAsAnArray,
     returnAsAString,
+    makeLuckyGreeting
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -114,5 +115,19 @@ test('this test should take in three numbers and return those number mushed toge
 
     const expected3 = 345;
     const actual3 = returnAsAString(3, 4, 5);
+    expect.equal(actual3, expected3);
+});
+
+test('This function should take in two numbers and return a greeting announcing that the sum of those numbers is today\'s lucky number', (expect) => {
+    const expected = `Hello! Your lucky number for the day is 222.`;
+    const actual = makeLuckyGreeting(111, 111);
+    expect.equal(actual, expected);
+
+    const expected2 = `Hello! Your lucky number for the day is 333.`;
+    const actual2 = makeLuckyGreeting(331, 2);
+    expect.equal(actual2, expected2);
+
+    const expected3 = `Hello! Your lucky number for the day is 666.`;
+    const actual3 = makeLuckyGreeting(521, 145);
     expect.equal(actual3, expected3);
 });
