@@ -4,11 +4,17 @@ import { myFunction } from '../functions.js';
 const { test, skip } = QUnit;
 
 test('this test should pass', (expect) => {
-    const expected = true;
+    const expected = 'howdy yall';
+    const actual = myFunction('yall');
+    expect.equal(actual, expected);
 
-    const actual = myFunction();
+    const expected2 = 'howdy partner';
+    const actual2 = myFunction('partner');
+    expect.equal(actual2, expected2);
 
-    expect.equal(actual, expected, 'true = true');
+    const expected3 = 'howdy cowboy';
+    const actual3 = myFunction('cowboy');
+    expect.equal(actual3, expected3);
 });
 
 skip('this test should be skipped', (expect) => {
