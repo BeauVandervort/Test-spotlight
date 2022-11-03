@@ -9,6 +9,7 @@ import {
     returnAsAString,
     makeLuckyGreeting,
     getSecondItem,
+    getLastItem,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -144,5 +145,19 @@ test('this function should take an array and return the second item in the array
 
     const expected3 = 'sushi';
     const actual3 = getSecondItem(['pizza', 'sushi', 'burger']);
+    expect.deepEqual(actual3, expected3);
+});
+
+test('This function should take an array and return the LAST item in the array, no matter the array\'s length', (expect) => {
+    const expected = 'github repository personified as a sleep paralysis demon';
+    const actual = getLastItem(['beau', 'diego', 'github repository personified as a sleep paralysis demon']);
+    expect.deepEqual(actual, expected);
+
+    const expected2 = 'the forever box';
+    const actual2 = getLastItem(['coffin', 'urn', 'bed', 'the forever box']);
+    expect.deepEqual(actual2, expected2);
+
+    const expected3 = 'steak';
+    const actual3 = getLastItem(['eggs', 'steak']);
     expect.deepEqual(actual3, expected3);
 });
